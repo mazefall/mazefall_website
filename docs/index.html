@@ -17,6 +17,7 @@
   <link href="https://cdn.prod.website-files.com/5ed9bc4d81168bf18d82f977/css/mazefalltest.webflow.shared.d6c7c6646.min.css" rel="stylesheet" type="text/css"/>
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link crossorigin="anonymous" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript">
   </script>
   <script type="text/javascript">
@@ -37,6 +38,79 @@
     -webkit-font-smoothing: antialiased; /* Chrome, Safari */
     -moz-osx-font-smoothing: grayscale; /* Firefox */
     text-rendering: optimizeLegibility;
+   }
+  </style>
+  <style>
+   .button-icon-trail {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 15px;
+    transition: padding-right 200ms ease;
+   }
+
+   .button-icon-trail .trail-icon {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    line-height: 1;
+    width: 0;
+    margin-left: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateX(-6px);
+    transition: width 200ms ease, margin-left 200ms ease, opacity 200ms ease, transform 200ms ease;
+    pointer-events: none;
+   }
+
+   .wave-icon {
+    transform-origin: 75% 75%;
+    transform: translateX(-6px) rotate(0deg);
+   }
+
+   .button-icon-trail:hover .trail-icon,
+   .button-icon-trail:focus-visible .trail-icon {
+    width: 1.15em;
+    margin-left: 0.35rem;
+    opacity: 1;
+    transform: translateX(0);
+   }
+
+   @keyframes wave-hand {
+    0% {
+     transform: translateX(0) rotate(0deg);
+    }
+
+    25% {
+     transform: translateX(0) rotate(18deg);
+    }
+
+    50% {
+     transform: translateX(0) rotate(-12deg);
+    }
+
+    75% {
+     transform: translateX(0) rotate(10deg);
+    }
+
+    100% {
+     transform: translateX(0) rotate(0deg);
+    }
+   }
+
+   .button-icon-trail:hover .wave-icon,
+   .button-icon-trail:focus-visible .wave-icon {
+    transform: translateX(0) rotate(0deg);
+    animation: wave-hand 1.2s ease-in-out 2;
+   }
+
+   .button-icon-trail:hover,
+   .button-icon-trail:focus-visible {
+    padding-right: 9px;
+   }
+
+   .hello-button:hover,
+   .hello-button:focus-visible {
+    padding-right: 12px;
    }
   </style>
   <style>
@@ -87,20 +161,29 @@
       With 7+ years in design, I’ve led 0→1 product efforts, solved messy user flows, and built scalable systems that grow with the product. I rely on research, collaborate tightly with PMs and engineers, and always push for clarity and craft in Figma.
      </div>
      <div class="button-group">
-      <a class="prime-buttom w-button" href="mailto:hf@mazefall.com?subject=Hello!">
-       Say hello! 👋🏾
+      <a class="prime-buttom w-button button-icon-trail hello-button" href="mailto:hf@mazefall.com?subject=Hello!">
+       Say hello!
+       <span aria-hidden="true" class="trail-icon wave-icon">
+        👋🏾
+       </span>
       </a>
-      <a class="button-sec w-button" href="https://cdn.prod.website-files.com/5ed9bc4d81168bf18d82f977/67c17b4a31b85abcd039e2b0_Housseynou_Resume_2025.pdf">
+      <a class="button-sec w-button button-icon-trail" href="https://cdn.prod.website-files.com/5ed9bc4d81168bf18d82f977/67c17b4a31b85abcd039e2b0_Housseynou_Resume_2025.pdf">
        Grab resume
+       <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+        arrow_outward
+       </span>
       </a>
-      <a class="button-sec w-button" href="https://www.linkedin.com/in/housseynoufall/" target="_blank">
-       Follow @linkedIn
+      <a class="button-sec w-button button-icon-trail" href="https://www.linkedin.com/in/housseynoufall/" target="_blank">
+       LinkedIn
+       <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+        arrow_outward
+       </span>
       </a>
      </div>
     </div>
    </div>
    <div class="caption">
-    Selected work
+    Recent work
    </div>
    <div class="workimage-wrapper">
     <div class="work-information">
@@ -116,8 +199,11 @@
        Improving the onboarding and discovery experience for new Alexa Plus customers.
       </div>
       <div class="button-wrapper">
-       <a class="button-sec w-button" href="alexa---case-study.html">
-        View --&gt;
+       <a class="button-sec w-button button-icon-trail" href="alexa---case-study.html">
+        View
+        <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+         arrow_right_alt
+        </span>
        </a>
        <div class="button-helper hide">
         <div class="button-helper-icon password">
@@ -152,8 +238,11 @@
        Leveraging AI to create personalized wardrobe recommendations.
       </div>
       <div class="button-wrapper">
-       <a class="prime-buttom disabled w-button" href="index.html#">
-        View --&gt;
+       <a class="prime-buttom disabled w-button button-icon-trail" href="index.html#">
+        View
+        <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+         arrow_right_alt
+        </span>
        </a>
        <div class="button-helper">
         <div class="button-helper-icon coming-soon">
@@ -186,8 +275,11 @@
        Converging two legacy design systems for better accessibility and wider adoption.
       </div>
       <div class="button-wrapper">
-       <a class="button-sec w-button" href="https://www.figma.com/proto/Ynvr7a49zPrWFpOI7ujEoe/Housseynou's-Work?page-id=0%3A1&amp;type=design&amp;node-id=1251-15497&amp;viewport=5790%2C12046%2C1.08&amp;t=6i7XbB2mlfrfISKy-1&amp;scaling=scale-down-width&amp;starting-point-node-id=1251%3A15497">
-        View --&gt;
+       <a class="button-sec w-button button-icon-trail" href="https://www.figma.com/proto/Ynvr7a49zPrWFpOI7ujEoe/Housseynou's-Work?page-id=0%3A1&amp;type=design&amp;node-id=1251-15497&amp;viewport=5790%2C12046%2C1.08&amp;t=6i7XbB2mlfrfISKy-1&amp;scaling=scale-down-width&amp;starting-point-node-id=1251%3A15497">
+        View
+        <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+         arrow_right_alt
+        </span>
        </a>
        <div class="button-helper hide">
         <div class="button-helper-icon">
@@ -216,8 +308,11 @@
        Simplifying the registration process to make one of those life changing purchase possible.
       </div>
       <div class="button-wrapper">
-       <a class="button-sec w-button" href="https://www.figma.com/proto/Ynvr7a49zPrWFpOI7ujEoe/Housseynou's-Work?page-id=569%3A101144&amp;type=design&amp;node-id=1152-11597&amp;viewport=3079%2C-1908%2C0.34&amp;t=BJR8upAb1LFWzZ08-1&amp;scaling=scale-down-width&amp;starting-point-node-id=1152%3A11597" target="_blank">
-        View --&gt;
+       <a class="button-sec w-button button-icon-trail" href="https://www.figma.com/proto/Ynvr7a49zPrWFpOI7ujEoe/Housseynou's-Work?page-id=569%3A101144&amp;type=design&amp;node-id=1152-11597&amp;viewport=3079%2C-1908%2C0.34&amp;t=BJR8upAb1LFWzZ08-1&amp;scaling=scale-down-width&amp;starting-point-node-id=1152%3A11597" target="_blank">
+        View
+        <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+         arrow_right_alt
+        </span>
        </a>
        <div class="button-helper hide">
         <div class="button-helper-icon">
@@ -250,8 +345,11 @@
        Visit my Dribbble profile for up to date work/snapshots!
       </div>
       <div class="button-wrapper">
-       <a class="button-sec w-button" href="https://www.dribbble.com/housseynoufall">
-        View --&gt;
+       <a class="button-sec w-button button-icon-trail" href="https://www.dribbble.com/housseynoufall">
+        View
+        <span aria-hidden="true" class="material-symbols-outlined trail-icon">
+         arrow_right_alt
+        </span>
        </a>
        <div class="button-helper hide">
         <div class="button-helper-icon">
